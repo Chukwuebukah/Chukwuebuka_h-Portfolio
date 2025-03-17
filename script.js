@@ -72,4 +72,11 @@ function typeWriter() {
 }
 
 // Start typing animation when page loads
-window.addEventListener('load', typeWriter); 
+window.addEventListener('load', typeWriter);
+
+// Update copyright year
+document.addEventListener('DOMContentLoaded', function() {
+    const yearElement = document.querySelector('footer p');
+    const currentYear = new Date().getFullYear();
+    yearElement.textContent = `© ${currentYear} Chukwuebuka Wilson Otada. All rights reserved.`;
+});

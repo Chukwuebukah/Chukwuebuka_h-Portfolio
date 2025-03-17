@@ -8,49 +8,54 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
-  <body class="bg-gray-100">
+  <body class="bg-gray-50">
     <!-- Navbar -->
-    <nav class="fixed w-full bg-white shadow-lg z-50">
+    <nav class="fixed w-full bg-gradient-to-r from-purple-600 to-blue-500 shadow-lg z-50">
       <div class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
-          <h1 class="text-2xl font-bold text-gray-800">
+          <h1 class="text-2xl font-bold text-white">
             Chukwuebuka_h's Portfolio
           </h1>
           <div class="hidden md:flex space-x-8">
-            <a
-              href="#home"
-              class="text-gray-600 hover:text-gray-900 transition duration-300"
-              >Home</a
-            >
-            <a
-              href="#about"
-              class="text-gray-600 hover:text-gray-900 transition duration-300"
-              >About</a
-            >
-            <a
-              href="#education"
-              class="text-gray-600 hover:text-gray-900 transition duration-300"
-              >Education</a
-            >
-            <a
-              href="#projects"
-              class="text-gray-600 hover:text-gray-900 transition duration-300"
-              >Projects</a
-            >
-            <a
-              href="#contact"
-              class="text-gray-600 hover:text-gray-900 transition duration-300"
-              >Contact</a
-            >
+            <a href="#home" class="text-white hover:text-gray-900 transition duration-300">Home</a>
+            <a href="#about" class="text-white hover:text-gray-900 transition duration-300">About</a>
+            <a href="#education" class="text-white hover:text-gray-900 transition duration-300">Education</a>
+            <a href="#projects" class="text-white hover:text-gray-900 transition duration-300">Projects</a>
+            <a href="#contact" class="text-white hover:text-gray-900 transition duration-300">Contact</a>
           </div>
+          <div class="md:hidden">
+            <button id="menuButton" class="text-white focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="menuDropdown" class="hidden md:hidden flex flex-col space-y-4 mt-4">
+          <a href="#home" class="text-white hover:text-gray-900 transition duration-300">Home</a>
+          <a href="#about" class="text-white hover:text-gray-900 transition duration-300">About</a>
+          <a href="#education" class="text-white hover:text-gray-900 transition duration-300">Education</a>
+          <a href="#projects" class="text-white hover:text-gray-900 transition duration-300">Projects</a>
+          <a href="#contact" class="text-white hover:text-gray-900 transition duration-300">Contact</a>
         </div>
       </div>
     </nav>
 
+    <script>
+      document.getElementById("menuButton").addEventListener("click", function() {
+        var menuDropdown = document.getElementById("menuDropdown");
+        if (menuDropdown.classList.contains("hidden")) {
+          menuDropdown.classList.remove("hidden");
+        } else {
+          menuDropdown.classList.add("hidden");
+        }
+      });
+    </script>
+
     <!-- Hero Section -->
     <section
       id="home"
-      class="h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600"
+      class="h-screen flex items-center justify-center bg-gradient-to-r from-green-400 to-blue-500"
     >
       <div
         class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12"
@@ -76,10 +81,12 @@
           <p class="text-xl text-white mb-8">
             Software Developer & Web Developer
           </p>
-          <button id="emailButton" class="bg-white text-purple-600 px-8 py-3 rounded-full hover:bg-yellow-300 transition duration-300">
+           <a href="#contact">
+            <button id="emailButton" class="bg-yellow-300 text-purple-600 px-8 py-3 rounded-full hover:bg-white transition duration-300">
+           
             Get in Touch
           </button>
-          
+            </a>
           <script>
             document.getElementById("emailButton").addEventListener("click", function() {
               window.location.href = "mailto:ebukahwilson120@gmail.com";
@@ -94,10 +101,10 @@
     <!-- About Section -->
     <section id="about" class="py-20 bg-white">
       <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">
+        <h2 class="text-4xl font-bold text-center mb-12 text-purple-600" data-aos="fade-up">
           About Me
         </h2>
-         <p class="text-gray-600 ">
+         <p class="text-gray-700 text-center mb-8">
           I'm a results-driven full-stack developer with a background in marketing, media, and business development. Passionate about building scalable web applications, I specialize in modern technologies like Next.js and MongoDB. With a strong interest in fintech, I aim to create innovative solutions that bridge technology and real-world impact.
         </p>
         <div class="grid md:grid-cols gap-12 items-center">
@@ -319,9 +326,9 @@
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="py-20 bg-gray-50">
+    <section id="education" class="py-20 bg-gray-100">
       <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">
+        <h2 class="text-4xl font-bold text-center mb-12 text-purple-600" data-aos="fade-up">
           Education & Experience
         </h2>
         <div class="max-w-3xl mx-auto space-y-8">
@@ -395,9 +402,9 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-100">
+    <section id="projects" class="py-20 bg-white">
       <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">
+        <h2 class="text-4xl font-bold text-center mb-12 text-purple-600" data-aos="fade-up">
           My Projects
         </h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -420,50 +427,190 @@
             </div>
           </div>
           <!-- Add more project cards as needed -->
+          <div
+          class="bg-white rounded-lg shadow-lg overflow-hidden"
+          data-aos="fade-up"
+        >
+          <img
+            src="project1.jpg"
+            alt="Project 1"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Project Title</h3>
+            <p class="text-gray-600 mb-4">Project description goes here.</p>
+            <a href="#" class="text-purple-600 hover:text-purple-800"
+              >View Project →</a
+            >
+          </div>
+        </div>
+        <div
+        class="bg-white rounded-lg shadow-lg overflow-hidden"
+        data-aos="fade-up"
+      >
+        <img
+          src="project1.jpg"
+          alt="Project 1"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Project Title</h3>
+          <p class="text-gray-600 mb-4">Project description goes here.</p>
+          <a href="#" class="text-purple-600 hover:text-purple-800"
+            >View Project →</a
+          >
+        </div>
+      </div>
+      <div
+      class="bg-white rounded-lg shadow-lg overflow-hidden"
+      data-aos="fade-up"
+    >
+      <img
+        src="project1.jpg"
+        alt="Project 1"
+        class="w-full h-48 object-cover"
+      />
+      <div class="p-6">
+        <h3 class="text-xl font-semibold mb-2">Project Title</h3>
+        <p class="text-gray-600 mb-4">Project description goes here.</p>
+        <a href="#" class="text-purple-600 hover:text-purple-800"
+          >View Project →</a
+        >
+      </div>
+    </div>
+    <div
+    class="bg-white rounded-lg shadow-lg overflow-hidden"
+    data-aos="fade-up"
+  >
+    <img
+      src="project1.jpg"
+      alt="Project 1"
+      class="w-full h-48 object-cover"
+    />
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2">Project Title</h3>
+      <p class="text-gray-600 mb-4">Project description goes here.</p>
+      <a href="#" class="text-purple-600 hover:text-purple-800"
+        >View Project →</a
+      >
+    </div>
+  </div>
+  <div
+  class="bg-white rounded-lg shadow-lg overflow-hidden"
+  data-aos="fade-up"
+>
+  <img
+    src="project1.jpg"
+    alt="Project 1"
+    class="w-full h-48 object-cover"
+  />
+  <div class="p-6">
+    <h3 class="text-xl font-semibold mb-2">Project Title</h3>
+    <p class="text-gray-600 mb-4">Project description goes here.</p>
+    <a href="#" class="text-purple-600 hover:text-purple-800"
+      >View Project →</a
+    >
+  </div>
+</div>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
+    <section id="contact" class="py-20 bg-gray-100">
       <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">
+        <h2 class="text-4xl font-bold text-center mb-12 text-purple-600" data-aos="fade-up">
           Get in Touch
         </h2>
         <div class="max-w-lg mx-auto">
-          <form class="space-y-6" data-aos="fade-up">
-            <div>
-              <label class="block text-gray-700 mb-2">Name</label>
-              <input
-                type="text"
-                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-purple-500"
-              />
-            </div>
-            <div>
-              <label class="block text-gray-700 mb-2">Email</label>
-              <input
-                type="email"
-                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-purple-500"
-              />
-            </div>
-            <div>
-              <label class="block text-gray-700 mb-2">Message</label>
-              <textarea
-                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-purple-500"
-                rows="4"
-              ></textarea>
-            </div>
-            <button
-              class="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition duration-300"
-            >
-              Send Message
-            </button>
-          </form>
+          <div class="bg-white p-8 rounded-lg shadow-lg animate-fade-in">
+            <h2 class="text-2xl font-semibold text-blue-600 mb-6">Send us a Message</h2>
+            <form onSubmit={handleSubmit} class="space-y-4">
+              <div class="transform transition-all duration-300 hover:scale-[1.01]">
+                <label class="block text-gray-700 mb-2" htmlFor="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  onChange={handleChange}
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 sm:px-3 sm:py-1 md:px-4 md:py-2"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="transform transition-all duration-300 hover:scale-[1.01]">
+                <label class="block text-gray-700 mb-2" htmlFor="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  
+                  onChange={handleChange}
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 sm:px-3 sm:py-1 md:px-4 md:py-2"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="transform transition-all duration-300 hover:scale-[1.01]">
+                <label class="block text-gray-700 mb-2" htmlFor="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  value={formData.message}
+                  onChange={handleChange}
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 sm:px-3 sm:py-1 md:px-4 md:py-2"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-purple-700/70 sm:py-2 md:py-3"
+              >
+                Send Message
+              </button>
+            </form>
+            <p class="mt-4 text-sm text-blue-600 text-center">
+              Or email us directly at:{' '}
+              <a 
+                href="mailto:ebukahwilson120@gmail.com"
+                class="text-blue-600 hover:text-red-600"
+              >
+                ebukahwilson120@gmail.com
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </section>
+    <script>
+      const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+      });
 
-    <footer class="bg-gray-800 text-white py-8">
+      const handleChange = (e) => {
+        setFormData({
+          ...formData,
+          [e.target.name]: e.target.value
+        });
+      };
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        const mailtoLink = `mailto:ebukahwilson120@gmail.com?subject=Message from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
+        window.location.href = mailtoLink;
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+      };
+    </script>
+
+    <footer class="bg-gradient-to-r from-purple-600 to-blue-500 text-white py-8">
       <div class="container mx-auto px-6">
         <div class="flex flex-col items-center space-y-4">
           <!-- Social Media Links -->
@@ -506,7 +653,7 @@
             </a>
           </div>
           <!-- Copyright -->
-          <p>© 2024 Your Name. All rights reserved.</p>
+          <p> Chukwuebuka Wilson Otada. All rights reserved.</p>
           <!-- Email -->
         </div>
       </div>
